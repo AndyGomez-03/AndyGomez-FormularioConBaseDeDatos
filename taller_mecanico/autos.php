@@ -19,11 +19,6 @@ include("Includes/header.php");
             <div class="card card-body">
                 <form action="save_register.php" method = "POST">
                     <div class="form-group">
-                        <label>Id del Auto:</label>
-                        <input type="number" name = "IdAuto" required class = "form-control" min = "1"
-                        placeholder = "Ingrese Id del Auto" autofocus>
-                    </div>
-                    <div class="form-group">
                         <label>Identidad:</label>
                         <select name="Identidad_Auto" required class = "form-control">
                             <option value="0">Ingrese su Identidad...</option>
@@ -37,12 +32,12 @@ include("Includes/header.php");
                     </div>
                     <div class="form-group">
                         <label>Marca:</label>
-                        <input type = "text" name="Marca" required pattern = "[A-Za-z]+" class = "form-control" minlength = "3"
+                        <input type = "text" name="Marca" required pattern = "[A-Za-Za]+" class = "form-control" minlength = "3"
                         placeholder = "Ingrese la Marca del Auto">
                     </div>
                     <div class="form-group">
                         <label>Modelo:</label>
-                        <input type = "text" name="Modelo" required pattern = "[A-Za-z0-9]+" class = "form-control" minlength = "1"
+                        <input type = "text" name="Modelo" required pattern = "[A-Za-Za0-9]+" class = "form-control" minlength = "1"
                         placeholder = "Ingrese el Modelo del Auto">
                     </div>
                     <div class="form-group">

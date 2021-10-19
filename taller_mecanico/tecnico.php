@@ -19,15 +19,11 @@ include("Includes/header.php");
 
             <div class="card card-body">
                 <form action="save_register.php" method = "POST">
-                    <div class="form-group">
-                        <label>Id del T&eacute;cnico</label>
-                        <input type="number" name = "IdTecnico" required class = "form-control" min = "1"
-                        placeholder = "Ingrese Id del T&eacute;cnico" autofocus>
-                    </div>
+                    
                     <div class="form-group">
                         <label>Nombre del T&eacute;cnico</label>
                         
-                        <input type = "text" name="Nombre_Tecnico" required pattern = "[A-Za-z]+" class = "form-control" minlength = "2"
+                        <input type = "text" name="Nombre_Tecnico" required pattern = "[A-Za-Za]+" class = "form-control" minlength = "2"
                         placeholder = "Ingrese el nombre del T&eacute;cnico">
                     </div>
                     

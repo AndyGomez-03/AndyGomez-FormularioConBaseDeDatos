@@ -26,7 +26,7 @@ include("Includes/header.php");
                     </div>
                     <div class="form-group">
                         <label>Nombre del Propietario:</label>
-                        <input type = "text" name="Nombre_Propietario" required pattern = "[A-Za-z]+" class = "form-control" minlength = "2"
+                        <input type = "text" name="Nombre_Propietario" required pattern = "[A-Za-Za]+" class = "form-control" minlength = "2"
                         placeholder = "Ingrese su Nombre">
                     </div>
                     <input type="submit" class = "btn btn-dark btn-block"
