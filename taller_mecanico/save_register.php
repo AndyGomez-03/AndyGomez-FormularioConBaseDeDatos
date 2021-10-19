@@ -4,11 +4,12 @@ include("db.php");
 #GUARDAR REGISTRO DE MANTENIMIENTO
 if (isset($_POST['save_register'])){
     
+    
     $idAuto = $_POST['IdAuto_Index'];
     $IdTipo_Revision = $_POST['Lista_Revision'];
     $fechaRevision = $_POST['Fecha_Revision'];
     $IdTecnico = $_POST['Lista_Tecnicos'];
-
+    
     
     $query = "INSERT INTO mantenimiento (IdAuto, Fecha_Revision, IdTipo_Revision, IdTecnico) VALUES ('$idAuto','$fechaRevision', '$IdTipo_Revision', '$IdTecnico')";
     $result = mysqli_query($conn,$query);

@@ -21,14 +21,16 @@ include("Includes/header.php");
                 <form action="save_register.php" method = "POST">
                     <div class="form-group">
                         <label>Id del T&eacute;cnico</label>
-                        <input type="number" name = "IdTecnico" class = "form-control" min = "0"
+                        <input type="number" name = "IdTecnico" required class = "form-control" min = "1"
                         placeholder = "Ingrese Id del T&eacute;cnico" autofocus>
                     </div>
                     <div class="form-group">
                         <label>Nombre del T&eacute;cnico</label>
-                        <input type = "text" name="Nombre_Tecnico"  rows="2" class = "form-control"
+                        
+                        <input type = "text" name="Nombre_Tecnico" required pattern = "[A-Za-z]+" class = "form-control" minlength = "2"
                         placeholder = "Ingrese el nombre del T&eacute;cnico">
                     </div>
+                    
                     <input type="submit" class = "btn btn-dark btn-block"
                     name = "Guardar_Tecnico" value = "Guardar">
                 </form>

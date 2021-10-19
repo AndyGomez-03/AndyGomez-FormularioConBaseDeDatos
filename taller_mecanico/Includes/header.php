@@ -14,14 +14,14 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <!--FONT ANDADA PRO-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Andada+Pro:wght@600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Andada+Pro:wght@600&display=swap" rel="stylesheet">
         <!--CSS-->
         <link rel="stylesheet" href="estilos.css">
     </head>
 <body>
 
-<nav class = "navbar navbar-dark" style="background-color: #0013ff;">
+<nav class = "navbar navbar-dark" style="background-color: #009BFF;">
 <div class="container">
 <a href="index.php" class = "navbar-brand">Taller Mec&aacute;nico</a>
     <ul class = "nav-menu">

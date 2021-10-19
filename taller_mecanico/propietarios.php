@@ -21,12 +21,12 @@ include("Includes/header.php");
                 <form action="save_register.php" method = "POST">
                     <div class="form-group">
                         <label>Identidad:</label>
-                        <input type="number" name = "Identidad_Prop" class = "form-control" min = "0"
+                        <input type="number" name = "Identidad_Prop" required class = "form-control" min = "1"
                         placeholder = "Ingrese su Identidad" autofocus>
                     </div>
                     <div class="form-group">
                         <label>Nombre del Propietario:</label>
-                        <input type = "text" name="Nombre_Propietario" class = "form-control"
+                        <input type = "text" name="Nombre_Propietario" required pattern = "[A-Za-z]+" class = "form-control" minlength = "2"
                         placeholder = "Ingrese su Nombre">
                     </div>
                     <input type="submit" class = "btn btn-dark btn-block"

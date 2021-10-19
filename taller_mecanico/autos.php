@@ -20,27 +20,34 @@ include("Includes/header.php");
                 <form action="save_register.php" method = "POST">
                     <div class="form-group">
                         <label>Id del Auto:</label>
-                        <input type="number" name = "IdAuto" class = "form-control" min = "0"
+                        <input type="number" name = "IdAuto" required class = "form-control" min = "1"
                         placeholder = "Ingrese Id del Auto" autofocus>
                     </div>
                     <div class="form-group">
                         <label>Identidad:</label>
-                        <input type = "text" name="Identidad_Auto" class = "form-control"
-                        placeholder = "Ingrese su Identidad">
+                        <select name="Identidad_Auto" required class = "form-control">
+                            <option value="0">Ingrese su Identidad...</option>
+                            <?php 
+                            $conProp= "SELECT * FROM propietarios";
+                            $ConcIDProp = mysqli_query($conn,$conProp);
+                            while($obtenIdProp = mysqli_fetch_array($ConcIDProp)){?>
+                            <option value=<?php echo $obtenIdProp['Identidad']?>><?php echo $obtenIdProp['Identidad']?></option>
+                            <?php }?>
+                         </select>
                     </div>
                     <div class="form-group">
                         <label>Marca:</label>
-                        <input type = "text" name="Marca" class = "form-control"
+                        <input type = "text" name="Marca" required pattern = "[A-Za-z]+" class = "form-control" minlength = "3"
                         placeholder = "Ingrese la Marca del Auto">
                     </div>
                     <div class="form-group">
                         <label>Modelo:</label>
-                        <input type = "text" name="Modelo" class = "form-control"
+                        <input type = "text" name="Modelo" required pattern = "[A-Za-z0-9]+" class = "form-control" minlength = "1"
                         placeholder = "Ingrese el Modelo del Auto">
                     </div>
                     <div class="form-group">
                         <label>Año:</label>
-                        <input type = "number" name="Anio" class = "form-control" min = "0"
+                        <input type = "number" name="Anio" required class = "form-control" min = "0"
                         placeholder = "Ingrese el Año del Auto">
                     </div>
                     <input type="submit" class = "btn btn-dark btn-block"

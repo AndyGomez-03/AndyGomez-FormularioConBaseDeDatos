@@ -20,12 +20,12 @@ include("Includes/header.php");?>
                 <form action="save_register.php" method = "POST">
                     <div class="form-group">
                         <label>Id Tipo de Revisi&oacute;n</label>
-                        <input type="number" name = "IdTipoRevision" class = "form-control" min = "0"
+                        <input type="number" name = "IdTipoRevision" required class = "form-control" min = "1"
                         placeholder = "Ingrese el Id del Tipo de Revisi&oacute;n" autofocus>
                     </div>
                     <div class="form-group">
                         <label>Tipo de Revisi&oacute;n</label>
-                        <input type = "text" name="Tipo_Revision" class = "form-control"
+                        <input type = "text" name="Tipo_Revision" required pattern = "[A-Za-z]+" class = "form-control" minlength = "2"
                         placeholder = "Ingrese el Tipo de Revisi&oacute;n">
                     </div>
                     <input type="submit" class = "btn btn-dark btn-block"
