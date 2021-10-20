@@ -77,8 +77,10 @@
         </div>  
                           
         <div class="col-md-8">
-           
-            <table class = "table table-bordered">
+
+            
+
+            <table id = "Paginar" class = "table table-bordered">
                 <thead>
                     <tr>
                         <th>Id Mantenimiento</th>
@@ -90,9 +92,27 @@
                         <th>Acci&oacute;n</th>
                     </tr>
                 </thead>
+                <?php 
+                $sql_registe = mysqli_query($conn,"SELECT COUNT(IdMantenimiento)  as total_registro FROM mantenimiento");
+                $result_register = mysqli_fetch_array($sql_registe);
+                $total_registro = $result_register['total_registro'];
+
+                $por_Pagina = 10;
+
+                if(empty($_GET['pagina'])){
+                    $pagina = 1;
+                }else{
+                    $pagina = $_GET['pagina'];
+                }
+                
+                
+                $desde = ($pagina-1) * $por_Pagina;
+                $total_paginas = ceil($total_registro / $por_Pagina);
+                
+                ?>
                 <tbody>
                     <?php
-                    $query = "SELECT * FROM taller_mecanico.mantenimiento";
+                    $query = "SELECT * FROM mantenimiento LIMIT $desde,$por_Pagina";
                     $result_taller = mysqli_query($conn,$query);
                     while($row = mysqli_fetch_array($result_taller)){
                         #IMPRIMIR NOMBRE DE TECNICOS
@@ -150,13 +170,52 @@
                 </tbody>
                 
             </table>
-            
+           
         </div>
         
     </div>
-
+    
 </div>
+<?php 
+$primera = $pagina -($pagina % 5) +1;
+if($primera > $pagina){
+    $primera = $primera-5;
+}
+$ultima = $primera +4 > $total_paginas ? $total_paginas : $primera + 4;
+?>
+<div class="paginador">
+            <ul>
+            
+                <?php 
+                
+                if($primera != 1){?>
+                <li> <a href="?pagina=<?php echo 1;?>"> |< </a> </li>
+                <li> <a href="?pagina=<?php echo $pagina-1;?>"> << </a> </li>
 
+                <?php 
+                }
+                
+                   
+                for($i = $primera; $i <= $ultima; $i++){
+                    if($i <= -1){ 
+                        $i = 1;
+                    }
+                    if($i == $pagina){
+                        echo '<li class= "PageSelected">'.$i.'</li>';  
+                    }else{
+                        echo '<li> <a href = "?pagina='.$i.'">'.$i.'</a></li>';
+                    }  
+                }
+            
+                if($pagina != $total_paginas){
+                ?>
+                <li> <a href="?pagina=<?php echo $pagina+1;?>"> >> </a> </li>
+                <li> <a href="?pagina=<?php echo $total_paginas;?>"> >| </a> </li>
+                <?php }?>
+                
+                
+            </ul>
+        </div>
 
 
 
