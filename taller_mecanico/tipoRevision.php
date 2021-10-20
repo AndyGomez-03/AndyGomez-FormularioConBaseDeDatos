@@ -21,8 +21,8 @@ include("Includes/header.php");?>
                     
                     <div class="form-group">
                         <label>Tipo de Revisi&oacute;n</label>
-                        <input type = "text" name="Tipo_Revision" required pattern = "[A-Za-Za]+" class = "form-control" minlength = "2"
-                        placeholder = "Ingrese el Tipo de Revisi&oacute;n">
+                        <input type = "text" name="Tipo_Revision" required pattern="[a-z A-Z á-ú-ñ Á-Ú-Ñ]+" class = "form-control" minlength = "2"
+                        placeholder = "Ingrese el Tipo de Revisi&oacute;n" autofocus>
                     </div>
                     <input type="submit" class = "btn btn-dark btn-block"
                     name = "Guardar_Revision" value = "Guardar">

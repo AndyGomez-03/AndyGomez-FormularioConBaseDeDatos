@@ -25,8 +25,9 @@ include("Includes/header.php");
                         placeholder = "Ingrese su Identidad" autofocus>
                     </div>
                     <div class="form-group">
+                        
                         <label>Nombre del Propietario:</label>
-                        <input type = "text" name="Nombre_Propietario" required pattern = "[A-Za-Za]+" class = "form-control" minlength = "2"
+                        <input type = "text" name="Nombre_Propietario" required pattern="[a-z A-Z á-ú-ñ Á-Ú-Ñ]+" class = "form-control" minlength = "2"
                         placeholder = "Ingrese su Nombre">
                     </div>
                     <input type="submit" class = "btn btn-dark btn-block"
@@ -73,5 +74,4 @@ include("Includes/header.php");
 
 
 <?php include("Includes/footer.php")?>
-
 

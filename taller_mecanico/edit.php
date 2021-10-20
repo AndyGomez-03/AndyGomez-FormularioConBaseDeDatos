@@ -43,7 +43,7 @@
                     </div>
                     <div class="form-group">
                         <label>Nombre del Propietario:</label>
-                        <input type = "text" name="Nombre_Propietario_Actu" required pattern = "[A-Za-z]+"value = "<?php echo $Nombre_Propietario?>" class= "form-control" placeholder = "Actualice su Nombre">
+                        <input type = "text" name="Nombre_Propietario_Actu" required pattern="[a-z A-Z á-ú-ñ Á-Ú-Ñ]+" value = "<?php echo $Nombre_Propietario?>" class= "form-control" placeholder = "Actualice su Nombre">
                     </div>
                     <button class ="btn btn-success btn-block" name = "Actualizar_Propietario">
                     Actualizar
@@ -103,8 +103,8 @@
             <div class="card card-body">
                 <form action="edit.php?id_Edit_Auto=<?php echo $_GET['id_Edit_Auto'];?>" method = "POST">
                     <div class="form-group">
-                        <label>Id del Auto:</label>
-                        <input type="number" name= "IdAuto_Actu" required value = "<?php echo $IdAuto?>" class = "form-control" placeholder = "Actualice el Id del Auto" min="1">
+                        <label hidden   >Id del Auto:</label>
+                        <input type="number" name= "IdAuto_Actu" hidden required value = "<?php echo $IdAuto?>" class = "form-control" placeholder = "Actualice el Id del Auto" min="1">
                     </div>
                     <div class="form-group">
                         <label>Identidad:</label>
@@ -112,11 +112,11 @@
                     </div>
                     <div class="form-group">
                         <label>Marca:</label>
-                        <input type = "text" name="Marca_Actu" required value = "<?php echo $Marca?>" class= "form-control" placeholder = "Actualice la Marca del Auto">
+                        <input type = "text" name="Marca_Actu" required pattern = "[A-Z a-z á-ú-ñ Á-Ú-Ñ 0-9]+" value = "<?php echo $Marca?>" class= "form-control" placeholder = "Actualice la Marca del Auto">
                     </div>
                     <div class="form-group">
                         <label>Modelo:</label>
-                        <input type = "text" name="Modelo_Actu" required value = "<?php echo $Modelo?>" class= "form-control" placeholder = "Actualice el Modelo del Auto">
+                        <input type = "text" name="Modelo_Actu" required pattern = "[A-Z a-z á-ú-ñ Á-Ú-Ñ 0-9]+" value = "<?php echo $Modelo?>" class= "form-control" placeholder = "Actualice el Modelo del Auto">
                     </div>
                     <div class="form-group">
                         <label>Año:</label>
@@ -175,12 +175,12 @@
             <div class="card card-body">
                 <form action="edit.php?id_Edit_Rev=<?php echo $_GET['id_Edit_Rev'];?>" method = "POST">
                     <div class="form-group">
-                        <label>Id Tipo de Revisi&oacute;n:</label>
-                        <input type="number" name= "IdTipoRevision_Actu" required value = "<?php echo $idTipoRevision?>" class = "form-control" placeholder = "Actualice el Id del Tipo de Revisi&oacute;n" min = "1">
+                        <label hidden>Id Tipo de Revisi&oacute;n:</label>
+                        <input type="number" name= "IdTipoRevision_Actu" hidden required value = "<?php echo $idTipoRevision?>" class = "form-control" placeholder = "Actualice el Id del Tipo de Revisi&oacute;n" min = "1">
                     </div>
                     <div class="form-group">
                         <label>Tipo de Revisi&oacute;n:</label>
-                        <input type = "text" name="TipoRevision_Actu" required pattern = "[A-Za-z]+"value = "<?php echo $TipoRevision?>" class= "form-control" placeholder = "Actualice el Tipo de Revisi&oacute;n">
+                        <input type = "text" name="TipoRevision_Actu" required pattern = "[A-Z a-z á-ú-ñ Á-Ú-Ñ]+" value = "<?php echo $TipoRevision?>" class= "form-control" placeholder = "Actualice el Tipo de Revisi&oacute;n">
                     </div>
                     <button class ="btn btn-success btn-block" name = "Actualizar_Revision">
                     Actualizar
@@ -235,12 +235,13 @@
             <div class="card card-body">
                 <form action="edit.php?id_Edit_Tecnico=<?php echo $_GET['id_Edit_Tecnico'];?>" method = "POST">
                     <div class="form-group">
-                        <label>Id del T&eacute;cnico:</label>
-                        <input type="number" name= "IdTecnico_Actu" required value = "<?php echo $idTecnico?>" class = "form-control" placeholder = "Actualice el Id del T&eacute;cnico" min = "1">
+                    
+                        <label hidden>Id del T&eacute;cnico:</label>
+                        <input type="number" name= "IdTecnico_Actu" hidden required value = "<?php echo $idTecnico?>" class = "form-control" placeholder = "Actualice el Id del T&eacute;cnico" min = "1">
                     </div>
                     <div class="form-group">
                         <label>Nombre del T&eacute;cnico:</label>
-                        <input type = "text" name="NombreTecnico_Actu" required pattern = "[A-Za-z]+" value = "<?php echo $NombreTecnico?>" class= "form-control" placeholder = "Actualice el Nombre del T&eacute;cnico">
+                        <input type = "text" name="NombreTecnico_Actu" required pattern = "[A-Z a-z á-ú-ñ Á-Ú-Ñ]+" value = "<?php echo $NombreTecnico?>" class= "form-control" placeholder = "Actualice el Nombre del T&eacute;cnico">
                     </div>
                     <button class ="btn btn-success btn-block" name = "Actualizar_Tecnico">
                     Actualizar
@@ -266,6 +267,9 @@
         if(mysqli_num_rows($result) == 1){
             $row = mysqli_fetch_array($result);
             $IdAuto= $row['IdAuto'];
+            $conIdAuto = "SELECT * FROM automoviles where IdAuto = $IdAuto";
+            $EnvConIdAuto = mysqli_query($conn,$conIdAuto);
+            $Auto = mysqli_fetch_array($EnvConIdAuto);
             $FechaRevision = $row['Fecha_Revision'];
             $IdTipo_Revision = $row['IdTipo_Revision'];
             $conTip = "SELECT * FROM tipo_revision where IdTipo_Revision = $IdTipo_Revision";
@@ -307,7 +311,14 @@
                 <form action="edit.php?id_Edit_Index=<?php echo $_GET['id_Edit_Index'];?>" method = "POST">
                     <div class="form-group">
                         <label>Id del Auto:</label>
-                        <input type="number" name= "IdAuto_ActuIndex" required value = "<?php echo $IdAuto?>" class = "form-control" placeholder = "Actualice el Id del Auto" min = "0">
+                        <select name= "IdAuto_ActuIndex" required  class = "form-control">
+                        <option value="<?php echo $Auto['IdAuto']?>"><?php echo $Auto['Identidad'], " ",$Auto['Marca']," ",$Auto['Modelo']?></option>
+                       <?php $GenAuto = "SELECT * FROM automoviles";
+                       $EnvGenAuto = mysqli_query($conn,$GenAuto);
+                       while($AutoGen = mysqli_fetch_array($EnvGenAuto)){?>
+                       <option value="<?php echo $AutoGen['IdAuto']?>"><?php echo $AutoGen['Identidad']," ",$AutoGen['Marca'], " ",$AutoGen['Modelo']?></option>
+                       <?php }?>
+                    </select>
                     </div>
                     <div class="form-group">
                         <label>Fecha de Revisi&oacute;n:</label>
@@ -331,7 +342,7 @@
                         <?php $Gen= "SELECT * FROM tecnicos";
                         $EnvGen = mysqli_query($conn,$Gen);
                         while($TecGen = mysqli_fetch_array($EnvGen)){?>
-                        
+
                         <option value="<?php echo $TecGen['IdTecnico']?>"><?php echo $TecGen['Nombre_Tecnico']?></option>
                         <?php }?> 
                     </select>

@@ -33,46 +33,38 @@
                          </select>
                        
                     </div>
+                    
                     <div class="form-group">
                         <label>Fecha de Revision:</label>
                         <input type = "date" name="Fecha_Revision" class = "form-control"
                         placeholder = "Ingrese una fecha">
                     </div>
+                   
                     <div class="form-group">
                         <label>Tipo de Revision:</label><br>
-                        <select name="Lista_Revision" class = "form-control" min = "1" max = "15">
+                        <select name="Lista_Revision" class = "form-control">
                             <option value="0" Selected>Selecciona una revisi&oacute;n...</option>
-                            <option value="1">Cambio de Aceite</option>
-                            <option value="2">Cambio de Llantas</option>
-                            <option value="3">Luces</option>
-                            <option value="4">Frenos</option>
-                            <option value="5">Aceite</option>
-                            <option value="6">Bater&iacute;a</option>
-                            <option value="7">Filtros</option>
-                            <option value="8">Amortiguadores</option>
-                            <option value="9">Correa de Distribuci&oacute;n</option>
-                            <option value="10">Sistema de Escape y Catalizadores</option>
-                            <option value="11">Alineaci&oacute;n y Balanceo</option>
-                            <option value="12">Limpiaparabrisas</option>
-                            <option value="13">Sistema de Enfriamiento</option>
-                            <option value="14">Motor</option>
-                            <option value="15">Cajas de Cambio</option>
+                            <?php  
+                            $conListaRev = "SELECT * FROM tipo_revision";
+                            $EnvConListaRev = mysqli_query($conn,$conListaRev);
+                            while($ObtenLista = mysqli_fetch_array($EnvConListaRev)){?>
+                            <option value="<?php echo $ObtenLista['IdTipo_Revision']?>"><?php echo $ObtenLista['Tipo_Revision']?></option>
+                            <?php }?>
                         </select>
                     </div>
                     
                     <div class="form-group">
+                        
                         <label>Tecnicos:</label><br>
-                        <select name="Lista_Tecnicos" required class = "form-control" min = "1" max = "8">
+                        <select name="Lista_Tecnicos" required class = "form-control">
                             <option value="0" Selected>Selecciona un t&eacute;cnico...</option>
-                            <option value="1">Julio</option>
-                            <option value="2">Raul</option>
-                            <option value="3">Marco</option>
-                            <option value="4">Esteban</option>
-                            <option value="5">Joseph</option>
-                            <option value="6">Alejandro</option>
-                            <option value="7">Carlos</option>
-                            <option value="8">Maria</option>
-                    </select>
+                            <?php
+                            $conListaTec = "SELECT * FROM tecnicos";
+                            $EnvConListaTec = mysqli_query($conn,$conListaTec);
+                            while($ObtenListaTec = mysqli_fetch_array($EnvConListaTec)){?>
+                            <option value="<?php echo $ObtenListaTec['IdTecnico']?>"><?php echo $ObtenListaTec['Nombre_Tecnico']?></option>
+                            <?php }?>
+                        </select>
                     </div>
                     <div class="d-grid">
                     <input type="submit" class = "btn btn-dark btn-block"

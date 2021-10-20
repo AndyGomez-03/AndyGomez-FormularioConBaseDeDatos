@@ -22,11 +22,9 @@ include("Includes/header.php");
                     
                     <div class="form-group">
                         <label>Nombre del T&eacute;cnico</label>
-                        
-                        <input type = "text" name="Nombre_Tecnico" required pattern = "[A-Za-Za]+" class = "form-control" minlength = "2"
+                        <input type = "text" name="Nombre_Tecnico" required pattern="[a-z A-Z á-ú-ñ Á-Ú-Ñ]+" class = "form-control"
                         placeholder = "Ingrese el nombre del T&eacute;cnico">
                     </div>
-                    
                     <input type="submit" class = "btn btn-dark btn-block"
                     name = "Guardar_Tecnico" value = "Guardar">
                 </form>

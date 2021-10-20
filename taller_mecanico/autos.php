@@ -32,17 +32,17 @@ include("Includes/header.php");
                     </div>
                     <div class="form-group">
                         <label>Marca:</label>
-                        <input type = "text" name="Marca" required pattern = "[A-Za-Za]+" class = "form-control" minlength = "3"
+                        <input type = "text" name="Marca" required pattern="[a-z A-Z á-ú-ñ Á-Ú-Ñ]+" class = "form-control" minlength = "3"
                         placeholder = "Ingrese la Marca del Auto">
                     </div>
                     <div class="form-group">
                         <label>Modelo:</label>
-                        <input type = "text" name="Modelo" required pattern = "[A-Za-Za0-9]+" class = "form-control" minlength = "1"
+                        <input type = "text" name="Modelo" required pattern = "[A-Z a-z0-9 á-ú-ñ Á-Ú-Ñ]+" class = "form-control" minlength = "1"
                         placeholder = "Ingrese el Modelo del Auto">
                     </div>
                     <div class="form-group">
                         <label>Año:</label>
-                        <input type = "number" name="Anio" required class = "form-control" min = "0"
+                        <input type = "number" name="Anio" required class = "form-control" min = "1"
                         placeholder = "Ingrese el Año del Auto">
                     </div>
                     <input type="submit" class = "btn btn-dark btn-block"
