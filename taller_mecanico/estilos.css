@@ -19,16 +19,16 @@ a{
 
 .table.table-bordered th{
     text-align: center;
-    background-color: rgb(31, 28, 28);
+    background-color: rgb(36, 35, 35);
     vertical-align: 18px;
     color: #fff;
 }
 
 .table.table-bordered td{
-    background-color:  rgb(31, 28, 28);
+    background-color:  #fff;
     text-align: center;
     vertical-align: 18px;
-    color: #fff;
+   
 }
 .table.table-bordered.alinear{
 vertical-align: 40px;
