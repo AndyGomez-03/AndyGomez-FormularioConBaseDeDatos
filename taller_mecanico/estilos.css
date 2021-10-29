@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    
+}
+body{
+    font-family: 'Andada Pro', serif;
+    background-color: #ffffff;
+
+}
+
+a{
+    color: #ffffff;
+    text-decoration: #ffffff;
+    list-style: none;
+}
+
+
+.table.table-bordered th{
+    text-align: center; 
+    color: #fff;
+    
+    font-size: 15px;
+}
+
+.table.table-bordered td{
+    background-color:  #fff;
+    text-align: center;
+    vertical-align: 18px;
+    font-size: 14px;
+}
+
+
+ul{
+    list-style: none;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+    
+}
+
+.navbar ul{
+    display:flex;
+}
+
+.navbar ul li{
+padding: 10px;
+padding-top: 26px;
+padding-bottom: 10px;
+font-size: 20px;
+}
+
+.navbar ul li a:hover{
+border-bottom: 2px solid oldlace;
+}
+.navbar ul.nav-menu {
+    flex: 1;
+    justify-content: space-around; 
+          
+}
+
+.navbar ul li a{
+    color: #ffffff;
+    text-decoration-color: #009BFF;
+    list-style: none;
+}
+
+.formulario{
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.enlace{
+    padding-bottom: 10px;
+}
+/*
+.paginador ul{
+    padding: 15px;
+    list-style: none;
+    margin-top: -40px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.paginador a, .PageSelected{
+    margin-top: -4px;
+    color: #000;
+    padding: 5px;
+    display: inline-block;
+    font-size: 18px;
+    text-align: center;
+    width: 40px;
+    text-decoration: none;
+}
+
+.paginador a:hover{
+    height: 40px;
+    width: 100px;
+    color: #fff;
+    background: #b81414;
+    border: 1px solid #000;
+}
+
+.PageSelected{
+    color: #fff;
+    background: #b81414;
+    border: 1px solid #000;
+}
+
+
+.form_search{
+    display: flex;
+    float: right;
+    background: initial;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: -2px;
+   
+}
+
+.form_search .btn_search{
+    background: #009BFF;
+    color: #fff;
+    padding: 0px 20px;
+    border: 0px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-left: -30px;
+    
+}*/
+
+
+
+.titulo{
+    background: #009BFF;
+    color: #fff;  
+}
+
+ /*
+.TotalRegistro{
+    font-size: 18px;
+    margin-right: 27px;
+    margin-top: 20px;
+    width: 305px;
+}
+
+.anterior{
+    width: 100px;
+}
+ .siguiente{
+     width: 100px;
+ }*/
+
+ .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: white !important;
+    border: 1px solid #610808;
+    background-color: #f68b8b;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f68b8b), color-stop(100%, #e01212));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #f68b8b 0%, #e01212 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -moz-linear-gradient(top, #f68b8b 0%, #e01212 100%);
+    /* FF3.6+ */
+    background: -ms-linear-gradient(top, #f68b8b 0%, #e01212 100%);
+    /* IE10+ */
+    background: -o-linear-gradient(top, #f68b8b 0%, #e01212 100%);
+    /* Opera 11.10+ */
+    background: linear-gradient(to bottom, #f68b8b 0%, #e01212 100%);
+    /* W3C */
+  }
+
+  .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: white !important;
+    border: 1px solid #e01212;
+    background-color: #f68b8b;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f68b8b), color-stop(100%, #e01212));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #f68b8b 0%, #e01212 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -moz-linear-gradient(top, #f68b8b 0%, #e01212 100%);
+    /* FF3.6+ */
+    background: -ms-linear-gradient(top, #f68b8b 0%, #e01212 100%);
+    /* IE10+ */
+    background: -o-linear-gradient(top, #f68b8b 0%, #e01212 100%);
+    /* Opera 11.10+ */
+    background: linear-gradient(to bottom, #f68b8b 0%, #e01212 100%);
+    /* W3C */
+  }
+
+
+
